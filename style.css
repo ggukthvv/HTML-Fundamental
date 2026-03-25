@@ -9,6 +9,11 @@ body {
     max-width: 100%;
 }
 
+.navigation--wrapper {
+    position: relative;
+    height: 100vh;
+}
+
 .overlay {
     background-color: #00000087;
     opacity: 0.7;
@@ -26,28 +31,53 @@ body {
     background-image: url("https://demo.tutsflow.com/sabil/images/bg/1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    bottom: 90px;
+
 
 }
 
 
-.logo {
+.header__image {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 20px;
 }
 
-nav {
+.header__nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    position: relative;
+    /* position: relative; */
     max-width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
 }
 
-.nav-links {
+.header__nav {
+    animation: fadein linear forwards;
+    animation-timeline: scroll();
+    /* Links the animation to the scroll progress */
+}
+
+@keyframes fadein {
+    from {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: coral;
+    }
+}
+
+.header__nav-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -56,7 +86,7 @@ nav {
     padding: 10px;
 }
 
-.nav-links li {
+.header__nav-links li {
     font-size: 14px;
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
@@ -68,12 +98,13 @@ nav {
     list-style: none;
 }
 
-.sign {
+.header__nav-links__button {
     width: 150px;
     height: 30px;
     background-color: coral;
     border-radius: 50px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     border: coral 1px solid;
@@ -81,14 +112,14 @@ nav {
 
 }
 
-.sign:hover {
+.header__nav-links__button:hover {
     border: 1px dashed coral;
     transition: 0.25 all ease;
     background-color: transparent;
 
 }
 
-.sign span {
+.header__nav-links__button span {
     font-size: 14px;
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
@@ -97,61 +128,64 @@ nav {
 }
 
 main {
-    width: 500px;
-    height: 100px;
-    margin: 200px 200px 20px 200px;
+    /* width: 500px; */
+    /* height: 100px; */
+    /* margin: 200px 200px 20px 200px; */
     padding: 10px;
     gap: 10px;
     display: grid;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: 300px
 }
 
-main h4 {
+.main_paragraph {
     font-size: 16px;
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
-main h1 {
+.main__heading {
     font-size: 32px;
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
-.buttons {
+.header__button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 400px;
     height: 100px;
-    margin: 20px 200px 20px 200px;
+    /* margin: 20px 200px 20px 200px; */
     gap: 10px;
     position: relative;
 }
 
-.buttons span {
+.header__button span {
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
-.try-for-free {
+.header__button--primary {
     width: 200px;
     height: 50px;
     background-color: coral;
     border-radius: 50px;
     display: flex;
+
     justify-content: center;
     align-items: center;
     border: coral 1px solid;
     transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
-.try-for-free:hover {
+.header__button--primary:hover {
     border: 1px dashed coral;
     transition: transform 0.25s ease, background-color 0.25s ease;
     background-color: transparent;
@@ -159,33 +193,34 @@ main h1 {
 
 }
 
-.try-for-free:hover {
+.header__button--primary:hover {
     span {
         color: coral;
         transition: transform 0.25s ease, background-color 0.25s ease;
     }
 }
 
-.see-how-it-works {
+.header__button--secondary {
     width: 200px;
     height: 50px;
     background-color: transparent;
     border-radius: 50px;
     display: flex;
+
     justify-content: center;
     align-items: center;
     border: transparent 1px solid;
     transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
-.see-how-it-works:hover {
+.header__button--secondary:hover {
     border: 1px dashed coral;
     transition: 0.25 all ease;
     background-color: coral;
 
 }
 
-.arrow {
+.header__button--image {
     width: 20px;
     height: 20px;
     color: white;
@@ -195,6 +230,7 @@ main h1 {
 .text {
     max-width: 100%;
     display: grid;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -224,7 +260,7 @@ main h1 {
     position: relative;
 }
 
-.card h1 {
+.card__heading {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 20px;
@@ -233,7 +269,7 @@ main h1 {
     letter-spacing: 0.5px;
 }
 
-.card p {
+.card__paragraph {
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
     margin: 5px 20px 20px 20px;
@@ -241,7 +277,7 @@ main h1 {
 
 }
 
-.circle {
+.card__image {
     width: 50px;
     height: 50px;
     border-radius: 50px;
@@ -252,7 +288,7 @@ main h1 {
 
 }
 
-.icon {
+.card__icon {
     width: 35px;
     height: 35px;
     position: absolute;
@@ -272,7 +308,7 @@ main h1 {
     margin: 100px;
 }
 
-.info {
+.form__wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -285,7 +321,7 @@ main h1 {
     padding: 20px;
 }
 
-form {
+.form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -298,7 +334,7 @@ form {
 
 }
 
-.first {
+.form__wrapper--primary {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -309,7 +345,7 @@ form {
     }
 }
 
-.second {
+.form__wrapper--secondary {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -336,7 +372,7 @@ input {
     padding: 10px 30px;
 }
 
-.login {
+.form__button>button {
 
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
@@ -347,16 +383,28 @@ input {
     padding: 10px;
     background-color: white;
     border-radius: 50px;
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
     align-items: center;
     border: transparent 1px solid;
     transition: transform 0.25s ease, background-color 0.25s ease;
+    cursor: pointer;
 }
 
-.login:hover {
-    border: 1px dashed coral;
-    transition: 0.25 all ease;
-    background-color: rgb(135, 124, 119);
+.form__button {
+    button:hover {
+        border: 1px dashed coral;
+        transition: 0.25 all ease;
+        background-color: rgb(135, 124, 119);
+    }
 
+
+}
+
+@media (min-width: 768px) {
+    nav {
+        /* position: fixed top; */
+        /* background-color: white; */
+    }
 }
