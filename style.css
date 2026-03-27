@@ -139,14 +139,14 @@ main {
     /* width: 500px; */
     /* height: 100px; */
     /* margin: 200px 200px 20px 200px; */
-    padding: 10px;
+    /* padding: 10px; */
     gap: 10px;
-    display: grid;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     position: relative;
-    padding: 300px
+    padding: 300px 300px
 }
 
 .main_paragraph {
@@ -167,7 +167,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
     height: 100px;
     /* margin: 20px 200px 20px 200px; */
     gap: 10px;
@@ -513,4 +512,10 @@ input {
 
     }
 
+}
+
+@media (max-width:375px) {
+    .main__heading {
+        font-size: 18px;
+    }
 }
