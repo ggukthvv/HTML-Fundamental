@@ -98,6 +98,18 @@ body {
     list-style: none;
 }
 
+.header__nav-links li a,
+.header__nav__hidden--menubar--links li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header__nav-links__button a,
+.header__nav__hidden--menubar__button a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .header__nav-links li:hover {
     color: coral;
     transition: transform 0.25s ease, background-color 0.25s ease;
@@ -185,7 +197,7 @@ main {
     background-color: coral;
     border-radius: 50px;
     display: flex;
-
+    text-decoration: none;
     justify-content: center;
     align-items: center;
     border: coral 1px solid;
@@ -213,7 +225,7 @@ main {
     background-color: transparent;
     border-radius: 50px;
     display: flex;
-
+    text-decoration: none;
     justify-content: center;
     align-items: center;
     border: transparent 1px solid;
@@ -407,6 +419,13 @@ input {
     }
 
 
+}
+
+.header__nav--toggle__button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
 .header__nav--toggle {
